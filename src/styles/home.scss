@@ -1,0 +1,30 @@
+.home {
+  height: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-content {
+  width: 550px;
+  height: 300px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 10rem;
+
+  &__icon {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-image: url(../img/icon.png);
+  }
+
+  &__typography {
+    padding: 2rem;
+    font-size: 7.2rem;
+  }
+
+  &__sns {
+    color: white;
+  }
+}

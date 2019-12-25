@@ -1,20 +1,22 @@
 import React from 'react'
-import Layout from '../layouts/layout'
-import baseStyle from '../styles/base-style'
-import styled from 'styled-components'
-
-const Index = () => (
-  <div>
-    <h1>Gatsby Starter hpp</h1>
-  </div>
-)
-
-const StyledIndex = styled(Index)`
-  ${baseStyle};
-`
+import Header from '../components/Header';
+import Home from '../components/Home'
+import About from '../components/About'
+import '../styles/reset.css'
+import '../styles/global.scss'
 
 export default () => (
-  <Layout>
-    <StyledIndex />
-  </Layout>
+  <div>
+    <Header />
+    <div className="home-container">
+      <div className="content">
+        <Home />
+      </div>
+    </div>
+    <div className="about-container">
+      <div className="content">
+        <About />
+      </div>
+    </div>
+  </div>
 )

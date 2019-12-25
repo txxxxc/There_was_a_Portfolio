@@ -1,0 +1,38 @@
+.link {
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 300;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  padding: 2rem 3rem;
+  font-size: 2.4rem;
+  box-sizing: border-box;
+
+  &__title {
+    flex-grow: 1;
+  }
+
+  &__menu {
+    display: flex;
+    width: 330px;
+    justify-content: space-between;
+  }
+
+  &__title--link {
+    @extend .link
+  }
+
+  &__menu--link {
+    @extend .link
+  }
+}
