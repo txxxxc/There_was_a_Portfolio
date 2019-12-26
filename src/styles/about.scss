@@ -1,5 +1,5 @@
 .about {
-  height: 850px;
+  height: 450px;
 
   &__title {
     font-size: 6.4rem;
@@ -11,17 +11,14 @@
     height: 200px;
     flex-wrap: wrap;
     align-items: baseline;
-    padding-top: 30px;
-
-
-    &--topic {
-      font-size: 3.6rem;
-      width: 20%;
-    }
-
+    padding-top: 3rem;
     &--content {
       font-size: 3.6rem;
       width: 80%;
+    }
+    &--topic {
+      font-size: 3.6rem;
+      width: 20%;
     }
   }
 }

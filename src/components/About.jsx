@@ -11,11 +11,15 @@ const About = () => (
   <div className="about">
     <p className="about__title">About</p>
     <div className="about__item-container">
-      {items.map((item) => (
-        <>
-          <div className="about__item-container--topic">{item.topic}</div>
-          <div className="about__item-container--content">{item.content}</div>
-        </>
+      {items.map((item, i) => (
+        <React.Fragment key={i}>
+          <div className="about__item-container--topic" key={`topic${i}`}>
+            {item.topic}
+          </div>
+          <div className="about__item-container--content" key={`content${i}`}>
+            {item.content}
+          </div>
+        </React.Fragment>
       ))}
     </div>
   </div>
