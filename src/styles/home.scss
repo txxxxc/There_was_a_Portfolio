@@ -3,6 +3,17 @@
   position: relative;
   z-index: 1;
 }
+.home-container {
+  // background: url(../img/home-background.png) no-repeat;
+  // background-size: cover;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.content {
+  width: 1024px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 .home-content {
   width: 550px;

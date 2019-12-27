@@ -44,19 +44,23 @@ const Skills = () => {
     additionalItems.push(<div className="skills__items-container--item" key={skills.length + 1} ></div>)
   }
 return (
-  <div className="skills" id="skills">
-    <p className="skills__title">Skills</p>
-    <div className="skills__items-container">
-      {skills.map((skill, i) => {
-        const Tag = components[skill].component
-        console.log({Tag})
-        return (
-          <div className="skills__items-container--item" key={i}>
-            <Tag width="160px" height="160px" />
-            <p className="skills__items-container--text">{components[skill].value}</p>
-          </div>
-        )})}
-      {additionalItems}
+  <div className="skills-container">
+    <div className="content">
+      <div className="skills" id="skills">
+        <p className="skills__title">Skills</p>
+        <div className="skills__items-container">
+          {skills.map((skill, i) => {
+            const Tag = components[skill].component
+            console.log({Tag})
+            return (
+              <div className="skills__items-container--item" key={i}>
+                <Tag width="160px" height="160px" />
+                <p className="skills__items-container--text">{components[skill].value}</p>
+              </div>
+            )})}
+          {additionalItems}
+        </div>
+      </div>
     </div>
   </div>
 )}

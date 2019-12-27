@@ -6,6 +6,7 @@ import Home from '../components/Home'
 import About from '../components/About'
 import Skills from '../components/Skills';
 import Products from '../components/Products';
+import Contact from '../components/Contact';
 import '../styles/reset.css'
 import '../styles/global.scss'
 
@@ -68,56 +69,43 @@ export default () => {
   return (
     <div>
       <Header />
+
       <BackgroundImage
         Tag="div"
-        className="test"
+        className="test1"
         fluid={homeImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
-        <div className="home-container">
-          <div className="content">
-            <Home />
-          </div>
-        </div>
+        <Home />
       </BackgroundImage>
-      
+
       <BackgroundImage
         Tag="div"
-        className="test"
+        className="test2"
         fluid={aboutImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
-        <div className="about-container">
-          <div className="content">
-            <About />
-          </div>
-        </div>
+        <About />
       </BackgroundImage>
 
       <BackgroundImage
         Tag="div"
-        className="test"
+        className="test1"
         fluid={skillsImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
-        <div className="skills-container">
-          <div className="content">
-            <Skills />
-          </div>
-        </div>
+        <Skills />
       </BackgroundImage>
 
       <BackgroundImage
         Tag="div"
-        className="test"
+        className="test2"
         fluid={productsImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
-        <div className="products-content">
-          <div className="content">
-            <Products />
-          </div>
-        </div>
+        <Products />
       </BackgroundImage>
+      
+      <Contact />
     </div>
   )}

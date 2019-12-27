@@ -1,3 +1,16 @@
+.skills-container {
+  padding: 30px 0 0;
+  // background: url(../img/home-background.png) no-repeat;
+  // background-size: cover;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.content {
+  width: 1024px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
 .skills {
   &__title {
     font-size: 6.4rem;
