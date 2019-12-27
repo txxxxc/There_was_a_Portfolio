@@ -3,7 +3,7 @@ import Github from '../svg/github'
 import '../styles/home.scss'
 
 const Home = () => (
-  <main className="home">
+  <main className="home" id="home">
     <div className="home-content">
       <div className="home-content__icon"></div>
       <p className="home-content__typography">Tomoya Tanaka</p>

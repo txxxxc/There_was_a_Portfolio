@@ -8,7 +8,7 @@ const items = [
 ]
 
 const About = () => (
-  <div className="about">
+  <div className="about" id="about">
     <p className="about__title">About</p>
     <div className="about__item-container">
       {items.map((item, i) => (

@@ -44,7 +44,7 @@ const Skills = () => {
     additionalItems.push(<div className="skills__items-container--item" key={skills.length + 1} ></div>)
   }
 return (
-  <div className="skills">
+  <div className="skills" id="skills">
     <p className="skills__title">Skills</p>
     <div className="skills__items-container">
       {skills.map((skill, i) => {

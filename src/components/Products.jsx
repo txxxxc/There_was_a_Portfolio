@@ -1,6 +1,8 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby'
-import ReactIcon from '../svg/react'
+import { useStaticQuery, graphql } from 'gatsby';
+import ReactIcon from '../svg/react';
+import GraphQL from '../svg/graphql';
+import TypeScript from '../svg/typescript';
 import Img from 'gatsby-image';
 import '../styles/products.scss';
 
@@ -24,20 +26,29 @@ const Products = () => {
   `)
   console.log({data})
   return (
-    <div className="products">
+    <div className="products" id="products">
       <p className="products__header">Products</p>
       <div className="products-container">
         <div className="products-container__item">
           <div className="products-container__item--image">
+            <Img fluid={data.file.childImageSharp.fluid} />
+
             <div className="tags">
               <div className="tags__container">
                 <div className="tags__item">
-                  <ReactIcon width="24px" height="24px"/>
+                  <ReactIcon width="24px" height="24px" />
                   <span className="tags__item-text">React</span>
                 </div>
-              </div> 
+                <div className="tags__item">
+                  <GraphQL width="24px" height="24px" />
+                  <span className="tags__item-text">GraphQL</span>
+                </div>
+                <div className="tags__item">
+                  <TypeScript width="24px" height="24px" />
+                  <span className="tags__item-text">TypeScript</span>
+                </div>
+              </div>
             </div>
-            <Img fluid={data.file.childImageSharp.fluid} />
           </div>
 
           <p className="products-container__item--header">

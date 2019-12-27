@@ -1,23 +1,24 @@
 import React from 'react';
+import {Link} from 'gatsby'
 import '../styles/header.scss'
 
 const Header = () => (
   <header className="header">
     <div className="header__title">
-      <a href="/" className="header__title--link">
+      <Link to="/#home" className="header__title--link">
         Home
-      </a>
+      </Link>
     </div>
     <div className="header__menu">
-      <a href="/" className="header__menu--link">
+      <Link to="/#about" className="header__menu--link">
         About
-      </a>
-      <a href="/" className="header__menu--link">
+      </Link>
+      <Link to="/#products" className="header__menu--link">
         Products
-      </a>
-      <a href="/" className="header__menu--link">
+      </Link>
+      <Link to="/#skills" className="header__menu--link">
         Skills
-      </a>
+      </Link>
     </div>
   </header>
 )

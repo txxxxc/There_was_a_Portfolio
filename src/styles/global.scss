@@ -9,25 +9,17 @@ body {
 }
 
 .home-container {
-  padding: 64px 0 0;
-  background: url(../img/home-background.png) no-repeat;
-  background-size: cover;
+  // background: url(../img/home-background.png) no-repeat;
+  // background-size: cover;
+  background-color: rgba(0,0,0,0.8);
 }
 
-.home-container::after {
-  content: '';
-  background-color: rgba(0,0,0,0.8);
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
 
 .about-container {
   padding: 30px 0 0;
   // background: url(../img/home-background.png) no-repeat;
   // background-size: cover;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .about-container::after {
@@ -43,11 +35,12 @@ body {
   padding: 30px 0 0;
   // background: url(../img/home-background.png) no-repeat;
   // background-size: cover;
+  background-color: rgba(0,0,0,0.7);
 }
 
 .skills-container::after {
   // content: '';
-  // background-color: rgba(0,0,0,0.8);
+  
   // position: absolute;
   // left: 0;
   // right: 0;
@@ -55,15 +48,16 @@ body {
   // bottom: 0;
 }
 
-.products-container {
+.products-content {
   padding: 30px 0 0;
+  background-color: rgba(0,0,0,0.85);
   // background: url(../img/home-background.png) no-repeat;
   // background-size: cover;
 }
 
 .products-container::after {
   // content: '';
-  // background-color: rgba(0,0,0,0.8);
+  
   // position: absolute;
   // left: 0;
   // right: 0;
