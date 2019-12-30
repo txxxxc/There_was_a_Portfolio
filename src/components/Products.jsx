@@ -33,7 +33,7 @@ const Products = () => {
           <div className="products-content__item">
 
             <div className="products-content__image">
-              <Img fluid={data.file.childImageSharp.fluid} />
+              <Img fluid={data.file.childImageSharp.fluid} style={{height:'100%'}}/>
 
               <div className="tags">
                 <div className="tags__container">

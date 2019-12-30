@@ -18,6 +18,7 @@ import '../styles/global.scss'
   }
 
 export default () => {
+  console.log(Icon)
   const data = useStaticQuery(graphql`
     query Hoge {
       home: file(relativePath: { eq: "home-background.png" }) {
@@ -70,21 +71,21 @@ export default () => {
   const productsImageData = data.products.childImageSharp.fluid;
   return (
     <div>
-      <Helmet 
-        title='Tomoya Tanaka Portfolio' 
+      <Helmet
+        title="Tomoya Tanaka Portfolio"
         meta={[
-            {
-              property: 'og:title',
-              content: 'Tomoya Tanaka Portfolio'
-            },
-            {
-              property: 'og:description',
-              content: 'てぃーてぃーのポートフォリオ'
-            },
-            {
-              property: 'og:image',
-              content: {Icon}
-            }
+          {
+            property: 'og:title',
+            content: 'Tomoya Tanaka Portfolio',
+          },
+          {
+            property: 'og:description',
+            content: 'てぃーてぃーのポートフォリオ',
+          },
+          {
+            property: 'og:image',
+            content: Icon,
+          },
         ]}
       />
       <Header />

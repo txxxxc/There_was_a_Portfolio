@@ -31,6 +31,7 @@
 }
 
 .products-content__header {
+  padding-top: 30px;
   font-size: 32px;
 }
 
@@ -38,7 +39,7 @@
   word-break: break-all;
   line-height: 1.5;
   font-weight: 300;
-  padding-top: 30px;
+  padding-top: 10px;
   font-size: 24px;
 }
 
@@ -86,7 +87,7 @@
   font-size: 24px;
 }
 
-.tags__item-link {
+.tags__link {
   width: 100%;
   padding-top: 30px;
   font-size: 24px;
