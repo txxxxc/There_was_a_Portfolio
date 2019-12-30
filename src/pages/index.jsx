@@ -84,11 +84,11 @@ export default () => {
           },
           {
             property: 'og:image',
-            content: Icon,
+            content: `https://tt-portfolio.netlify.com${Icon}`,
           },
           {
             property: 'fb:app_id',
-            content: 571105203439775
+            content: 571105203439775,
           },
         ]}
       />
