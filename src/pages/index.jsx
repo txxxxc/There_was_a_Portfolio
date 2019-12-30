@@ -8,7 +8,7 @@ import About from '../components/About'
 import Skills from '../components/Skills';
 import Products from '../components/Products';
 import Contact from '../components/Contact';
-import Icon from '../img/icon.png';
+import Icon from '../img/about-background.png';
 import '../styles/reset.css'
 import '../styles/global.scss'
 
