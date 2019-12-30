@@ -86,6 +86,10 @@ export default () => {
             property: 'og:image',
             content: Icon,
           },
+          {
+            property: 'fb:app_id',
+            content: 571105203439775
+          },
         ]}
       />
       <Header />
