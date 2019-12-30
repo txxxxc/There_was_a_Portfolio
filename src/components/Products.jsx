@@ -26,44 +26,46 @@ const Products = () => {
   `)
   console.log({data})
   return (
-    <div className="products-content">
-      <div className="content">
-        <div className="products" id="products">
-          <p className="products__header">Products</p>
-          <div className="products-container">
-            <div className="products-container__item">
-              <div className="products-container__item--image">
-                <Img fluid={data.file.childImageSharp.fluid} />
+    <div className="products" id="products">
+      <div className="products-container">
+        <p className="products__header">Products</p>
+        <div className="products-content">
+          <div className="products-content__item">
 
-                <div className="tags">
-                  <div className="tags__container">
-                    <div className="tags__item">
-                      <ReactIcon width="24px" height="24px" />
-                      <span className="tags__item-text">React</span>
-                    </div>
-                    <div className="tags__item">
-                      <GraphQL width="24px" height="24px" />
-                      <span className="tags__item-text">GraphQL</span>
-                    </div>
-                    <div className="tags__item">
-                      <TypeScript width="24px" height="24px" />
-                      <span className="tags__item-text">TypeScript</span>
-                    </div>
-                    <div className="tags__text">More →</div>
+            <div className="products-content__image">
+              <Img fluid={data.file.childImageSharp.fluid} />
+
+              <div className="tags">
+                <div className="tags__container">
+                  <div className="tags__item">
+                    <ReactIcon width="24px" height="24px" />
+                    <span className="tags__item-text">React</span>
                   </div>
+                  <div className="tags__item">
+                    <GraphQL width="24px" height="24px" />
+                    <span className="tags__item-text">GraphQL</span>
+                  </div>
+                  <div className="tags__item">
+                    <TypeScript width="24px" height="24px" />
+                    <span className="tags__item-text">TypeScript</span>
+                  </div>
+                  <div className="tags__link">More →</div>
                 </div>
               </div>
-
-              <p className="products-container__item--header">
-                時間割シミュレーター
-              </p>
-              <p className="products-container__item--text">
-                単位制の母校の為に作った生徒が履修する
-                授業を計画できるアプリです。
-              </p>
             </div>
-            <div className="products-container__item"></div>
+
+            <p className="products-content__header">
+              時間割シミュレーター
+            </p>
+            <p className="products-content__text">
+              単位制の母校の為に作った生徒が履修する
+              授業を計画できるアプリです。
+            </p>
+
           </div>
+
+          <div className="products-container__item"></div>
+
         </div>
       </div>
     </div>

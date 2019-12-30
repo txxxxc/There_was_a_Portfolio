@@ -1,15 +1,11 @@
 .home {
+  background-color: rgba(0,0,0,.6);
+}
+
+.home-container {
   height: 850px;
   position: relative;
   z-index: 1;
-}
-.home-container {
-  // background: url(../img/home-background.png) no-repeat;
-  // background-size: cover;
-  background-color: rgba(0,0,0,0.8);
-}
-
-.content {
   width: 1024px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -21,21 +17,21 @@
   margin: 0 auto;
   text-align: center;
   padding-top: 10rem;
+}
 
-  &__icon {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background-image: url(../img/icon.png);
-  }
+.home-content__icon {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-image: url(../img/icon.png);
+}
 
-  &__typography {
-    padding: 2rem;
-    font-size: 7.2rem;
-  }
+.home-content__typography {
+  padding: 2rem;
+  font-size: 7.2rem;
+}
 
-  &__sns {
-    color: white;
-  }
+.home-content__sns {
+  color: white;
 }

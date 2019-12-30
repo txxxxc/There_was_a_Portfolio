@@ -1,4 +1,4 @@
-.link {
+%link {
   color: #ffffff;
   font-size: 2.4rem;
   font-weight: 300;
@@ -18,21 +18,22 @@
   font-size: 2.4rem;
   box-sizing: border-box;
   background-color: rgba(0,0,0,.4);
-  &__title {
-    flex-grow: 1;
-  }
+}
 
-  &__menu {
-    display: flex;
-    width: 330px;
-    justify-content: space-between;
-  }
+.header-title {
+  flex-grow: 1;
+}
 
-  &__title--link {
-    @extend .link
-  }
+.header-menu {
+  display: flex;
+  width: 330px;
+  justify-content: space-between;
+}
 
-  &__menu--link {
-    @extend .link
-  }
+.header-menu__link {
+  @extend %link
+}
+
+.header-title__link {
+  @extend %link
 }

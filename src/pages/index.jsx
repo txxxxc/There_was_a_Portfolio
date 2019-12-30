@@ -1,12 +1,14 @@
 import React from 'react'
 import BackgroundImage from 'gatsby-background-image'
 import { useStaticQuery, graphql } from 'gatsby'
+import Helmet from 'react-helmet'
 import Header from '../components/Header';
 import Home from '../components/Home'
 import About from '../components/About'
 import Skills from '../components/Skills';
 import Products from '../components/Products';
 import Contact from '../components/Contact';
+import Icon from '../img/icon.png';
 import '../styles/reset.css'
 import '../styles/global.scss'
 
@@ -20,7 +22,7 @@ export default () => {
     query Hoge {
       home: file(relativePath: { eq: "home-background.png" }) {
         childImageSharp {
-          fluid {
+          fluid(background: "rgba(0,0,0,.6)") {
             src
             aspectRatio
             sizes
@@ -68,20 +70,37 @@ export default () => {
   const productsImageData = data.products.childImageSharp.fluid;
   return (
     <div>
+      <Helmet 
+        title='Tomoya Tanaka Portfolio' 
+        meta={[
+            {
+              property: 'og:title',
+              content: 'Tomoya Tanaka Portfolio'
+            },
+            {
+              property: 'og:description',
+              content: 'てぃーてぃーのポートフォリオ'
+            },
+            {
+              property: 'og:image',
+              content: {Icon}
+            }
+        ]}
+      />
       <Header />
 
       <BackgroundImage
         Tag="div"
-        className="test1"
+        className="test"
         fluid={homeImageData}
-        backgroundColor={`rgba(0,0,0,0.8)`}
+        backgroundColor={`#040e18`}
       >
         <Home />
       </BackgroundImage>
 
       <BackgroundImage
         Tag="div"
-        className="test2"
+        className="test"
         fluid={aboutImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
@@ -90,7 +109,7 @@ export default () => {
 
       <BackgroundImage
         Tag="div"
-        className="test1"
+        className="test"
         fluid={skillsImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
@@ -99,13 +118,13 @@ export default () => {
 
       <BackgroundImage
         Tag="div"
-        className="test2"
+        className="test"
         fluid={productsImageData}
         backgroundColor={`rgba(0,0,0,0.8)`}
       >
         <Products />
       </BackgroundImage>
-      
+
       <Contact />
     </div>
   )}

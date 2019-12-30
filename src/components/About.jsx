@@ -8,20 +8,17 @@ const items = [
 ]
 
 const About = () => (
-  <div className="about-container">
+  <div className="about" id="about">
     <div className="content">
-      <div className="about" id="about">
-        <p className="about__title">About</p>
-        <div className="about__item-container">
+      <div className="about-container">
+        <p className="about-container__title">About</p>
+        <div className="about-items">
           {items.map((item, i) => (
             <React.Fragment key={i}>
-              <div className="about__item-container--topic" key={`topic${i}`}>
+              <div className="about-items__topic" key={`topic${i}`}>
                 {item.topic}
               </div>
-              <div
-                className="about__item-container--content"
-                key={`content${i}`}
-              >
+              <div className="about-items__content" key={`content${i}`}>
                 {item.content}
               </div>
             </React.Fragment>

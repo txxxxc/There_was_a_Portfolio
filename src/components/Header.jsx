@@ -4,19 +4,19 @@ import '../styles/header.scss'
 
 const Header = () => (
   <header className="header">
-    <div className="header__title">
-      <Link to="/#home" className="header__title--link">
+    <div className="header-title">
+      <Link to="/#home" className="header-title__link">
         Home
       </Link>
     </div>
-    <div className="header__menu">
-      <Link to="/#about" className="header__menu--link">
+    <div className="header-menu">
+      <Link to="/#about" className="header-menu__link">
         About
       </Link>
-      <Link to="/#products" className="header__menu--link">
+      <Link to="/#products" className="header-menu__link">
         Products
       </Link>
-      <Link to="/#skills" className="header__menu--link">
+      <Link to="/#skills" className="header-menu__link">
         Skills
       </Link>
     </div>
