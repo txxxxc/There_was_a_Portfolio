@@ -14,6 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "gatsby": "^2.18.8",
     "gatsby-background-image": "^0.9.12",
     "gatsby-image": "^2.2.37",
@@ -25,6 +28,7 @@
     "gatsby-transformer-sharp": "^2.3.9",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",
+    "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
     "smooth-scroll": "^16.1.0"

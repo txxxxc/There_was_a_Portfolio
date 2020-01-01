@@ -1,20 +1,28 @@
+@import 'global.scss';
+
 .contact-container {
   background-color: rgba($color: #000000, $alpha: 1.0);
+  padding: 3rem;
+
 }
 
 .contact__header {
-  padding-top: 30px;
   font-size: 6.4rem;
+
+  @include mq(sm) {
+    font-size: 3.6rem;
+  }
 }
 
 .contact__email {
   padding-top: 30px;
   font-size: 3.6rem;
+
+  @include mq(sm) {
+    font-size: 2.4rem;
+  }
 }
 
 .content {
-  width: 1024px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  @extend .container
 }
-

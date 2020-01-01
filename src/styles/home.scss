@@ -1,22 +1,18 @@
+@import 'global.scss';
+
 .home {
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0, 0, 0, .6);
 }
 
 .home-container {
+  @extend .container;
   height: 850px;
-  position: relative;
-  z-index: 1;
-  width: 1024px;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-.home-content {
-  width: 550px;
-  height: 300px;
-  margin: 0 auto;
   text-align: center;
-  padding-top: 10rem;
+  padding-top: 70px;
+
+  @include mq(sm) {
+    height: 500px;
+  }
 }
 
 .home-content__icon {
@@ -25,13 +21,25 @@
   margin: 0 auto;
   border-radius: 50%;
   background-image: url(../img/icon.png);
+  background-size: cover;
+
+  @include mq(sm) {
+    width: 80px;
+    height: 80px;
+  }
 }
 
 .home-content__typography {
+  display: inline-block;
   padding: 2rem;
   font-size: 7.2rem;
+
+  @include mq(sm) {
+    font-size: 3.6rem;
+  }
 }
 
 .home-content__sns {
+  display: block;
   color: white;
 }

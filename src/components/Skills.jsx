@@ -1,4 +1,7 @@
 import React from 'react';
+import BackgroundImage from 'gatsby-background-image'
+import { useStaticQuery, graphql } from 'gatsby'
+import Icon from './Icon';
 import GraphQL from '../svg/graphql';
 import _React from '../svg/react';
 import JavaScript from '../svg/javascript';
@@ -39,33 +42,53 @@ const skills = [
 ]
 
 const Skills = () => {
+  const data = useStaticQuery(graphql`
+    query Skills {
+      file(relativePath: { eq: "skills-background.jpg" }) {
+        childImageSharp {
+          fluid {
+            src
+            aspectRatio
+            sizes
+            srcSet
+          }
+        }
+      }
+    }
+  `)
   const additionalItems = [];
   for(let i = 0; i < skills.length % 3 - 1; i++) {
     additionalItems.push(
-      <div className="skill-list__container" key={skills.length + 1}></div>
+      <div className="skill-list__container--none" key={skills.length + 1}></div>
     )
   }
+  const imageData = data.file.childImageSharp.fluid;
 return (
-  <div className="skills" id="skills">
-    <div className="skills-container">
-      <p className="skills-container__title">Skills</p>
-      <div className="skill-list">
-        {skills.map((skill, i) => {
-          const Tag = components[skill].component
-          console.log({ Tag })
-          return (
-            <div className="skill-list__container" key={i}>
-              <Tag width="160px" height="160px" />
-              <p className="skill-list__text">
-                {components[skill].value}
-              </p>
-            </div>
-          )
-        })}
-        {additionalItems}
+  <BackgroundImage
+    Tag="div"
+    className="test"
+    fluid={imageData}
+    backgroundColor={`rgba(0,0,0,0.8)`}
+  >
+    <div className="skills" id="skills">
+      <div className="skills-container">
+        <p className="skills-container__title">Skills</p>
+        <div className="skill-list">
+          {skills.map((skill, i) => {
+            return (
+              <div className="skill-list__container" key={i}>
+                <Icon
+                  skill={skill} className="skill-list__tag" width="120px" height="120px"
+                />
+                <p className="skill-list__text">{components[skill].value}</p>
+              </div>
+            )
+          })}
+          {additionalItems}
+        </div>
       </div>
     </div>
-  </div>
+  </BackgroundImage>
 )}
 
 export default Skills;
