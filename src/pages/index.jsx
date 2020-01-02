@@ -16,12 +16,16 @@ if (typeof window !== 'undefined') {
 }
 
 export default () => {
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth
-  })
+    const [dimensions, setDimensions] = useState({
+      height: 0,
+      width: 0
+    })
   
   useEffect(() => {
+    setDimensions({
+      height: window.innerHeight,
+      width: window.innerWidth
+    })
     const handleResize = () => {
       setDimensions({
         height: window.innerHeight,
@@ -29,7 +33,7 @@ export default () => {
       })
     }
       window.addEventListener('resize', handleResize)
-  })
+  }, [])
   return (
     <div className="wrapper">
       <Helmet

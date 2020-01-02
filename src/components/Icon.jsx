@@ -4,6 +4,7 @@ import _React from '../svg/react'
 import JavaScript from '../svg/javascript'
 import TypeScript from '../svg/typescript'
 import Nodejs from '../svg/node'
+import Sass from '../svg/sass'
 
 const components = {
   javascript: {
@@ -27,6 +28,10 @@ const components = {
     component: Nodejs,
     value: 'Node.js',
   },
+  sass: {
+    component: Sass,
+    value: 'Sass'
+  }
 }
 
 const Icon = props => {

@@ -7,6 +7,7 @@ import _React from '../svg/react';
 import JavaScript from '../svg/javascript';
 import TypeScript from '../svg/typescript';
 import Nodejs from '../svg/node'
+import Sass from '../svg/sass'
 
 import '../styles/skills.scss'
 const components = {
@@ -31,6 +32,10 @@ const components = {
     component: Nodejs,
     value: 'Node.js'
   },
+  sass: {
+    component: Sass,
+    value: 'Sass'
+  }
 }
 
 const skills = [
@@ -39,6 +44,7 @@ const skills = [
   'graphql',
   'react',
   'nodejs',
+  'sass'
 ]
 
 const Skills = () => {
