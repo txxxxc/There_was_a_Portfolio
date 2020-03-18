@@ -2,17 +2,14 @@ import React from 'react';
 import Img from 'gatsby-image';
 import Icon from './Icon';
 import '../styles/products.scss';
-
+import { Link } from 'gatsby';
 
 const Product = props => {
   // console.log({props})
   return (
     <>
       <div className="products-content__image">
-        <Img
-          fluid={props.fluid}
-          style={{ height: '100%' }}
-        />
+        <Img fluid={props.fluid} style={{ height: '100%' }} />
         <div className="tags">
           <div className="tags__container">
             {props.product.skills.map(skill => (
@@ -21,7 +18,12 @@ const Product = props => {
                 <span className="tags__item-text">{skill.value}</span>
               </div>
             ))}
-            <div className="tags__link">More →</div>
+            <a
+              href="https://subject-app-v2.herokuapp.com/"
+              className="tags__link"
+            >
+              More →
+            </a>
           </div>
         </div>
       </div>
