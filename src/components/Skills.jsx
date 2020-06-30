@@ -1,15 +1,16 @@
 import React from 'react';
-import BackgroundImage from 'gatsby-background-image'
-import { useStaticQuery, graphql } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image';
+import { useStaticQuery, graphql } from 'gatsby';
 import Icon from './Icon';
 import GraphQL from '../svg/graphql';
 import _React from '../svg/react';
 import JavaScript from '../svg/javascript';
 import TypeScript from '../svg/typescript';
-import Nodejs from '../svg/node'
-import Sass from '../svg/sass'
+import Nodejs from '../svg/node';
+import Sass from '../svg/sass';
 
-import '../styles/skills.scss'
+import '../styles/skills.scss';
+
 const components = {
   javascript: {
     component: JavaScript,
@@ -26,17 +27,17 @@ const components = {
   },
   react: {
     component: _React,
-    value: 'React'
+    value: 'React',
   },
   nodejs: {
     component: Nodejs,
-    value: 'Node.js'
+    value: 'Node.js',
   },
   sass: {
     component: Sass,
-    value: 'Sass'
-  }
-}
+    value: 'Sass',
+  },
+};
 
 const skills = [
   'javascript',
@@ -44,8 +45,8 @@ const skills = [
   'graphql',
   'react',
   'nodejs',
-  'sass'
-]
+  'sass',
+];
 
 const Skills = () => {
   const data = useStaticQuery(graphql`
@@ -61,40 +62,42 @@ const Skills = () => {
         }
       }
     }
-  `)
+  `);
   const additionalItems = [];
-  for(let i = 0; i < skills.length % 3 - 1; i++) {
+  for (let i = 0; i < (skills.length % 3) - 1; i++) {
     additionalItems.push(
-      <div className="skill-list__container--none" key={skills.length + 1}></div>
-    )
+      <div className="skill-list__container--none" key={skills.length + 1} />
+    );
   }
   const imageData = data.file.childImageSharp.fluid;
-return (
-  <BackgroundImage
-    Tag="div"
-    className="test"
-    fluid={imageData}
-    backgroundColor={`rgba(0,0,0,0.8)`}
-  >
-    <div className="skills" id="skills">
-      <div className="skills-container">
-        <p className="skills-container__title">Skills</p>
-        <div className="skill-list">
-          {skills.map((skill, i) => {
-            return (
+  return (
+    <BackgroundImage
+      Tag="div"
+      className="test"
+      fluid={imageData}
+      backgroundColor="rgba(0,0,0,0.8)"
+    >
+      <div className="skills" id="skills">
+        <div className="skills-container">
+          <p className="skills-container__title">Skills</p>
+          <div className="skill-list">
+            {skills.map((skill, i) => (
               <div className="skill-list__container" key={i}>
                 <Icon
-                  skill={skill} className="skill-list__tag" width="120px" height="120px"
+                  skill={skill}
+                  className="skill-list__tag"
+                  width="120px"
+                  height="120px"
                 />
                 <p className="skill-list__text">{components[skill].value}</p>
               </div>
-            )
-          })}
-          {additionalItems}
+            ))}
+            {additionalItems}
+          </div>
         </div>
       </div>
-    </div>
-  </BackgroundImage>
-)}
+    </BackgroundImage>
+  );
+};
 
 export default Skills;

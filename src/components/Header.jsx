@@ -1,12 +1,13 @@
 import React from 'react';
-import {Link} from 'gatsby'
-import '../styles/header.scss'
-import { slide as Menu } from 'react-burger-menu'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-const Header = props => {
-  const { size } = props
-  const isSmall = size <= 480
+import { Link } from 'gatsby';
+import '../styles/header.scss';
+import { slide as Menu } from 'react-burger-menu';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+
+const Header: React.FC = (props) => {
+  const { size } = props;
+  const isSmall = size <= 480;
   // console.log({isSmall})
   // console.log({size})
   return (
@@ -54,7 +55,7 @@ const Header = props => {
         </header>
       )}
     </>
-  )
-}
+  );
+};
 
 export default Header;
