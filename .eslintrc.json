@@ -63,7 +63,9 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "arrow-parens":"off"
+    
   },
   "overrides": [
     {

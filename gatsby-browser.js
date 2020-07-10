@@ -7,4 +7,5 @@
 
 // You can delete this file if you're not using it
 import('./src/styles/reset.css');
-import('./src/styles/global.scss');
+import('./src/styles/global.css');
+exports.shouldUpdateScroll = () => false;

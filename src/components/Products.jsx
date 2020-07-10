@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import BackgroundImage from 'gatsby-background-image'
+import BackgroundImage from 'gatsby-background-image';
 import Product from './Product';
 import '../styles/products.scss';
 
@@ -13,21 +13,20 @@ const products = [
     skills: [
       {
         component: 'react',
-        value: 'React'
+        value: 'React',
       },
       {
         component: 'graphql',
-        value: 'GraphQL'
+        value: 'GraphQL',
       },
       {
         component: 'typescript',
-        value: 'TypeScript'
-      }
+        value: 'TypeScript',
+      },
     ],
     link: 'https://github.com/Tanaka-Tomoya/subject-app-v2',
   },
-]
-
+];
 
 const Products = () => {
   const data = useStaticQuery(graphql`
@@ -53,15 +52,15 @@ const Products = () => {
         }
       }
     }
-  `)
-  const imageData = data.products.childImageSharp.fluid
+  `);
+  const imageData = data.products.childImageSharp.fluid;
   // console.log({data})
   return (
     <BackgroundImage
       Tag="div"
       className="test"
       fluid={imageData}
-      backgroundColor={`rgba(0,0,0,0.8)`}
+      backgroundColor="rgba(0,0,0,0.8)"
     >
       <div className="products" id="products">
         <div className="products-container">
@@ -75,11 +74,11 @@ const Products = () => {
                 />
               ))}
             </div>
-            <div className="products-container__item"></div>
+            <div className="products-container__item" />
           </div>
         </div>
       </div>
     </BackgroundImage>
-  ) 
-}
+  );
+};
 export default Products;

@@ -3,14 +3,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'img',
-        path: `${__dirname}/src/img`,
+        name: 'images',
+        path: `${__dirname}/src/images`,
       },
     },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/img/icon.png', // This path is relative to the root of the site.
+        icon: 'src/images/icon.png', // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sharp',
@@ -19,6 +19,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-typescript',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-graphql-codegen',
       options: {

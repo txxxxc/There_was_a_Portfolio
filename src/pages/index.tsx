@@ -1,14 +1,12 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+// import Helmet from 'react-helmet';
 // import Header from '../components/Header';
 import Home from '../components/Home';
-// import About from '../components/About';
+import About from '../components/About';
 // import Skills from '../components/Skills';
 // import Products from '../components/Products';
 // import Contact from '../components/Contact';
-import Icon from '../img/skills-background.jpg';
-import '../styles/reset.css';
-import '../styles/global.scss';
+import Layout from '../components/Layout';
 
 // if (typeof window !== 'undefined') {
 //   // eslint-disable-next-line global-require
@@ -34,34 +32,13 @@ const IndexPage: React.FC = () => (
   //   };
   //   window.addEventListener('resize', handleResize);
   // }, []);
-  <div className="wrapper">
-    <Helmet
-      title="Tomoya Tanaka Portfolio"
-      meta={[
-        {
-          property: 'og:title',
-          content: 'Tomoya Tanaka Portfolio',
-        },
-        {
-          property: 'og:description',
-          content: 'てぃーてぃーのポートフォリオ',
-        },
-        {
-          property: 'og:image',
-          content: `https://tt-portfolio.netlify.com${Icon}`,
-        },
-        {
-          property: 'fb:app_id',
-          content: 571105203439775,
-        },
-      ]}
-    />
+  <Layout>
     {/* <Header size={dimensions.width} /> */}
     <Home />
-    {/* <About />
-      <Skills />
+    <About />
+    {/* <Skills />
       <Products />
       <Contact /> */}
-  </div>
+  </Layout>
 );
 export default IndexPage;

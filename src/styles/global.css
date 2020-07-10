@@ -1,0 +1,16 @@
+html {
+  font-size: 62.5%;
+  overflow: auto;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #fafafa;
+  background-color: #353535;
+  /* // IOSでハンバーガーメニューをfixedにするようの記述
+  // overflow: hidden; */
+}
+
+html, body {
+  height: 100%;
+}
