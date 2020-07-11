@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Particles from 'react-particles-js';
+import Particles, { MoveDirection, OutMode } from 'react-particles-js';
 import breakpoints from '../utils/breakpoints';
 
 type Props = {
@@ -13,14 +13,23 @@ const Layout: React.FC<Props> = ({ children }) => (
     <BackgroundParticles
       params={{
         particles: {
-          number: {
-            value: 160,
-            density: {
+          color: {
+            value: ['#F2ED68', '#D750F2', '#38F239', '#1C4DC9'],
+          },
+          opacity: {
+            value: 0.3,
+            anim: {
               enable: false,
             },
           },
+          number: {
+            value: 100,
+            // density: {
+            //   enable: true,
+            // },
+          },
           size: {
-            value: 3,
+            value: 20,
             random: true,
             anim: {
               speed: 4,
@@ -31,34 +40,30 @@ const Layout: React.FC<Props> = ({ children }) => (
             enable: false,
           },
           move: {
-            random: true,
+            random: false,
             speed: 1,
-            // direction: 'top',
-            // out_mode: 'out',
+            direction: MoveDirection.top,
+            out_mode: OutMode.out,
           },
         },
         interactivity: {
-          events: {
-            onhover: {
-              enable: true,
-              mode: 'bubble',
-            },
-            // onclick: {
-            //   enable: true,
-            //   mode: 'repulse',
-            // },
-          },
+          // events: {
+          //   onhover: {
+          //     enable: true,
+          //     mode: 'bubble',
+          //   },
+          //   // onclick: {
+          //   //   enable: true,
+          //   //   mode: 'repulse',
+          //   // },
+          // },
           modes: {
-            bubble: {
-              distance: 250,
-              duration: 2,
-              size: 0,
-              opacity: 0,
-            },
-            repulse: {
-              distance: 400,
-              duration: 4,
-            },
+            // bubble: {
+            //   distance: 400,
+            //   duration: 0.3,
+            //   size: 4,
+            //   opacity: 1,
+            // },
           },
         },
       }}
