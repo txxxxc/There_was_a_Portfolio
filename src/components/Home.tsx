@@ -1,40 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSpring } from 'react-spring';
+import { Link } from 'react-scroll';
 
-const Home: React.FC = () => {
-  const [, setY] = useSpring(() => ({
-    y: window.pageYOffset,
-    // config: config.molasses,
-    config: { duration: 1000 },
-  }));
-  return (
-    <Wrapper>
-      <Container>
-        <p>
-          Welcome to my
-          <br />
-          <Span>Portfolio</Span>
-        </p>
-        <ScrollButton
-          onClick={() => {
-            setY({
-              y: window.parent.screen.height,
-              from: { y: 0 },
-              reset: true,
-              onChange: ({ y }) => {
-                window.scrollBy(0, y);
-              },
-            });
-          }}
-          type="button"
-        >
-          ↓
-        </ScrollButton>
-      </Container>
-    </Wrapper>
-  );
-};
+const Home: React.FC = () => (
+  <Wrapper>
+    <Container>
+      <p>
+        Welcome to my
+        <br />
+        <Span>Portfolio</Span>
+      </p>
+      <ScrollButton to="about" spy smooth duration={500}>
+        ↓
+      </ScrollButton>
+    </Container>
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   text-align: center;
@@ -57,7 +38,7 @@ const Span = styled.span`
   color: #c91c70;
 `;
 
-const ScrollButton = styled.button`
+const ScrollButton = styled(Link)`
   width: 80px;
   height: 80px;
   line-height: 80px;
