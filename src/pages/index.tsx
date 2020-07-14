@@ -7,6 +7,7 @@ import About from '../components/About';
 // import Products from '../components/Products';
 // import Contact from '../components/Contact';
 import Layout from '../components/Layout';
+import 'animate.css';
 
 // if (typeof window !== 'undefined') {
 //   // eslint-disable-next-line global-require

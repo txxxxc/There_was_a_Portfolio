@@ -40,7 +40,6 @@
     "react-inview-monitor": "^2.3.0",
     "react-particles-js": "^3.2.1",
     "react-scroll": "^1.8.0",
-    "smooth-scroll": "^16.1.0",
     "styled-components": "^5.1.1"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import { Element } from 'react-scroll';
+import InViewMonitor from 'react-inview-monitor';
 
 type ChildImage = {
   childImageSharp: {
@@ -27,32 +28,44 @@ const About: React.FC = () => {
     }
   `);
   return (
-    <Wrapper name="about">
-      <AboutContainer>
-        <Name>
-          田中&nbsp;智也
-          <br />
-          <Alphabet>Tomoya Tanaka</Alphabet>
-        </Name>
-        <Description>
-          2001年、大阪府箕面市生まれ。19歳。
-          <br />
-          関西学院大学総合政策学部出身
-          <br />
-          現在はLife is Tech!で中高生にプログラミングを教えています。
-          <br />
-          普段はよくTypeScript, React, GraphQLを書いてます。
-          <br />
-          漫画、麻雀、ゲーム、お笑いが好きです。
-        </Description>
-      </AboutContainer>
-      <ImageContainer>
-        <ProfileImg fluid={data.profile.childImageSharp.fluid} />
-      </ImageContainer>
-    </Wrapper>
+    <InViewMonitor
+      childPropsInView={{ isActive: true }}
+      classNameInView="animate__animated animate__fadeInLeft"
+    >
+      <Wrapper isActive={false}>
+        <Container name="about">
+          <AboutContainer>
+            <Name>
+              田中&nbsp;智也
+              <br />
+              <Alphabet>Tomoya Tanaka</Alphabet>
+            </Name>
+            <Description>
+              2001年、大阪府箕面市生まれ。19歳。
+              <br />
+              関西学院大学総合政策学部出身。
+              <br />
+              現在はLife is Tech!で中高生にプログラミングを教えています。
+              <br />
+              普段はよくTypeScript, React, GraphQLを書いてます。
+              <br />
+              漫画、麻雀、ゲーム、お笑いが好きです。
+            </Description>
+          </AboutContainer>
+          <ImageContainer>
+            <ProfileImg fluid={data.profile.childImageSharp.fluid} />
+          </ImageContainer>
+        </Container>
+      </Wrapper>
+    </InViewMonitor>
   );
 };
-const Wrapper = styled(Element)`
+
+const Wrapper = styled.div<{ isActive: boolean }>`
+  visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
+`;
+
+const Container = styled(Element)`
   display: flex;
   height: 80vh;
 `;

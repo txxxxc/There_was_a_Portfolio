@@ -43,6 +43,7 @@ const ScrollButton = styled(Link)`
   height: 80px;
   line-height: 80px;
   font-size: 6rem;
+  font-weight: 100;
   color: #fafafa;
   border: 1px solid #fafafa;
   border-radius: 50%;
