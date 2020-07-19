@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-scroll';
+import Arrow from './Arrow';
 
 const Home: React.FC = () => (
   <Wrapper>
@@ -10,9 +10,7 @@ const Home: React.FC = () => (
         <br />
         <Span>Portfolio</Span>
       </p>
-      <ScrollButton to="about" spy smooth duration={500}>
-        ↓
-      </ScrollButton>
+      <Arrow to="about" />
     </Container>
   </Wrapper>
 );
@@ -36,20 +34,6 @@ const Container = styled.div`
 
 const Span = styled.span`
   color: #c91c70;
-`;
-
-const ScrollButton = styled(Link)`
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  font-size: 6rem;
-  font-weight: 100;
-  color: #fafafa;
-  border: 1px solid #fafafa;
-  border-radius: 50%;
-  &:hover {
-    opacity: 0.7;
-  }
 `;
 
 export default Home;
