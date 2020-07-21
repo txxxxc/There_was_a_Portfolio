@@ -4,6 +4,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
 import { Element } from 'react-scroll';
 import InViewMonitor from 'react-inview-monitor';
+import Arrow from './Arrow';
+import Image from './Image';
 
 type ChildImage = {
   childImageSharp: {
@@ -28,46 +30,59 @@ const About: React.FC = () => {
     }
   `);
   return (
-    <InViewMonitor
-      childPropsInView={{ isActive: true }}
-      classNameInView="animate__animated animate__fadeInLeft"
-    >
-      <Wrapper isActive={false}>
-        <Container name="about">
-          <AboutContainer>
-            <Name>
-              田中&nbsp;智也
-              <br />
-              <Alphabet>Tomoya Tanaka</Alphabet>
-            </Name>
-            <Description>
-              2001年、大阪府箕面市生まれ。19歳。
-              <br />
-              関西学院大学総合政策学部出身。
-              <br />
-              現在はLife is Tech!で中高生にプログラミングを教えています。
-              <br />
-              普段はよくTypeScript, React, GraphQLを書いてます。
-              <br />
-              漫画、麻雀、ゲーム、お笑いが好きです。
-            </Description>
-          </AboutContainer>
-          <ImageContainer>
-            <ProfileImg fluid={data.profile.childImageSharp.fluid} />
-          </ImageContainer>
-        </Container>
-      </Wrapper>
-    </InViewMonitor>
+    <Wrapper>
+      <InView>
+        <InViewMonitor
+          childPropsInView={{ isActive: true }}
+          classNameInView="animate__animated animate__fadeInLeft"
+        >
+          <Container name="about" isActive={false}>
+            <AboutContainer>
+              <Name>
+                田中&nbsp;智也
+                <br />
+                <Alphabet>Tomoya Tanaka</Alphabet>
+              </Name>
+              <Description>
+                2001年、大阪府箕面市生まれ。19歳。
+                <br />
+                関西学院大学総合政策学部出身。
+                <br />
+                現在はLife is Tech!で中高生にプログラミングを教えています。
+                <br />
+                普段はよくTypeScript, React, GraphQLを書いてます。
+                <br />
+                漫画、麻雀、ゲーム、お笑いが好きです。
+              </Description>
+            </AboutContainer>
+            <ImageContainer>
+              <ProfileImg fluid={data.profile.childImageSharp.fluid} />
+            </ImageContainer>
+          </Container>
+        </InViewMonitor>
+      </InView>
+      <Arrow to="skills" />
+    </Wrapper>
   );
 };
 
-const Wrapper = styled.div<{ isActive: boolean }>`
-  visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
+const Wrapper = styled.div`
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-const Container = styled(Element)`
-  display: flex;
+const InView = styled.div`
+  min-width: 100%;
   height: 80vh;
+`;
+
+const Container = styled(Element)<{ isActive: boolean }>`
+  display: flex;
+  visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
+  min-width: 100%;
 `;
 
 const Name = styled.p`
@@ -80,7 +95,6 @@ const AboutContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
   width: 45%;
 `;
 

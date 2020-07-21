@@ -3,7 +3,7 @@ import React from 'react';
 // import Header from '../components/Header';
 import Home from '../components/Home';
 import About from '../components/About';
-// import Skills from '../components/Skills';
+import Skills from '../components/Skills';
 // import Products from '../components/Products';
 // import Contact from '../components/Contact';
 import Layout from '../components/Layout';
@@ -37,8 +37,8 @@ const IndexPage: React.FC = () => (
     {/* <Header size={dimensions.width} /> */}
     <Home />
     <About />
-    {/* <Skills />
-      <Products />
+    <Skills />
+    {/* <Products />
       <Contact /> */}
   </Layout>
 );

@@ -16,6 +16,7 @@ const Home: React.FC = () => (
 );
 
 const Wrapper = styled.div`
+  position: relative;
   text-align: center;
   height: 100vh;
 `;

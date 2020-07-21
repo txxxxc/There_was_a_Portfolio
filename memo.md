@@ -1,5 +1,6 @@
-田中智也(たなかともや、2001年(平成13年)7月4日)は
-大阪府箕面市出身の大学生。
-中学生の頃からものづくりの楽しさに触れ、
-現在はLife is Tech!でメンターとして
-中高生にものづくりの楽しさを教えている。
+Language
+  TypeScript JavaScript Ruby GraphQL
+FrameWork
+  Ruby on Rails Sinatra Express Apollo
+Tool
+  Git Docker
