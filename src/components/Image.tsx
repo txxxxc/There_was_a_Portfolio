@@ -13,6 +13,8 @@ type ChildImage = {
     childImageSharp: {
       fixed: FixedObject;
     };
+    extension: string;
+    publicURL: string;
   };
 };
 
@@ -37,6 +39,8 @@ const Image: React.FC<Props> = ({ filename }) => {
                 ...GatsbyImageSharpFixed
               }
             }
+            extension
+            publicURL
           }
         }
       }
@@ -44,8 +48,12 @@ const Image: React.FC<Props> = ({ filename }) => {
   `);
   // eslint-disable-next-line max-len
   // eslint-disable-next-line prettier/prettier
-  const image: ChildImage | undefined = allImages.images.edges.find(n => n.node.relativePath.includes(filename));
+  const image: ChildImage = allImages.images.edges.find(n => n.node.relativePath.includes(filename));
+  const { childImageSharp, publicURL } = image?.node;
 
+  if (!childImageSharp && image.node.extension === 'svg') {
+    return <img src={publicURL} width="32px" height="32px" />;
+  }
   const fixedImage: FixedObject = image.node.childImageSharp.fixed;
   return <Img fixed={fixedImage} />;
 };

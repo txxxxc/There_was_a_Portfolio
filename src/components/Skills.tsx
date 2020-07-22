@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import { Element } from 'react-scroll';
 import Image from './Image';
+import Arrow from './Arrow';
 
 interface Content {
-  icon: string;
+  icon?: string;
   name: string;
 }
 
@@ -18,19 +19,19 @@ const SkillsContents: ContentsType[] = [
     genre: 'Language',
     contents: [
       {
-        icon: 'ruby.png',
+        icon: 'ruby.svg',
         name: 'Ruby',
       },
       {
-        icon: 'javascript.png',
+        icon: 'javascript.svg',
         name: 'JavaScript',
       },
       {
-        icon: 'typescript.png',
+        icon: 'typescript.svg',
         name: 'TypeScript',
       },
       {
-        icon: 'icon_graphql.png',
+        icon: 'graphql.svg',
         name: 'GraphQL',
       },
     ],
@@ -39,15 +40,18 @@ const SkillsContents: ContentsType[] = [
     genre: 'FrameWorks',
     contents: [
       {
-        icon: 'rubyonrails.png',
+        icon: 'rubyonrails.svg',
         name: 'Ruby on Rails',
       },
       {
-        icon: 'react.png',
+        name: 'Sinatra',
+      },
+      {
+        icon: 'react.svg',
         name: 'React',
       },
       {
-        icon: 'apollographql.png',
+        icon: 'apollographql.svg',
         name: 'Apollo',
       },
     ],
@@ -56,32 +60,32 @@ const SkillsContents: ContentsType[] = [
     genre: 'Tools',
     contents: [
       {
-        icon: 'git.png',
+        icon: 'git.svg',
         name: 'Git',
       },
       {
-        icon: 'docker.png',
+        icon: 'docker.svg',
         name: 'Docker',
       },
     ],
   },
 ];
 
-console.log(SkillsContents);
-
 const Skills: React.FC = () => (
   <Wrapper name="skills">
-    <Header>Skills</Header>
     <Container>
+      <Header>Skills</Header>
       {SkillsContents.map(elements => (
         <>
           <Topic>{elements.genre}</Topic>
           <Contents>
             {elements.contents.map(content => (
               <>
-                <Icon>
-                  <Image filename={content.icon} />
-                </Icon>
+                {content.icon && (
+                  <Icon>
+                    <Image filename={content.icon} />
+                  </Icon>
+                )}
                 <Name>{content.name}</Name>
               </>
             ))}
@@ -89,14 +93,17 @@ const Skills: React.FC = () => (
         </>
       ))}
     </Container>
+    <Arrow to="contact" />
   </Wrapper>
 );
 
 const Wrapper = styled(Element)`
+  display: flex;
   position: relative;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 `;
 
 const Container = styled.div`
@@ -105,7 +112,7 @@ const Container = styled.div`
 
 const Topic = styled.p`
   font-size: 4rem;
-  padding-top: 3rem;
+  padding-top: 50px;
 `;
 
 const Contents = styled.p`

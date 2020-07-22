@@ -2444,7 +2444,7 @@ export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type Unnamed_1_Query = { images: { edges: Array<{ node: (
-        Pick<File, 'relativePath' | 'name'>
+        Pick<File, 'relativePath' | 'name' | 'extension' | 'publicURL'>
         & { childImageSharp?: Maybe<{ fixed?: Maybe<GatsbyImageSharpFixedFragment> }> }
       ) }> } };
 
