@@ -4,6 +4,7 @@ import React from 'react';
 import Home from '../components/Home';
 import About from '../components/About';
 import Skills from '../components/Skills';
+import Internship from '../components/Internship';
 // import Products from '../components/Products';
 // import Contact from '../components/Contact';
 import Layout from '../components/Layout';
@@ -38,6 +39,7 @@ const IndexPage: React.FC = () => (
     <Home />
     <About />
     <Skills />
+    <Internship />
     {/* <Products />
       <Contact /> */}
   </Layout>

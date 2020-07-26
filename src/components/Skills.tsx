@@ -44,15 +44,15 @@ const SkillsContents: ContentsType[] = [
         name: 'Ruby on Rails',
       },
       {
-        name: 'Sinatra',
-      },
-      {
         icon: 'react.svg',
         name: 'React',
       },
       {
-        icon: 'apollographql.svg',
+        icon: 'apollo.svg',
         name: 'Apollo',
+      },
+      {
+        name: 'Sinatra',
       },
     ],
   },
@@ -93,7 +93,7 @@ const Skills: React.FC = () => (
         </>
       ))}
     </Container>
-    <Arrow to="contact" />
+    <Arrow to="internship" />
   </Wrapper>
 );
 
@@ -108,6 +108,7 @@ const Wrapper = styled(Element)`
 
 const Container = styled.div`
   height: 80vh;
+  width: 100%;
 `;
 
 const Topic = styled.p`

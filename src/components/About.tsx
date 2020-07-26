@@ -5,7 +5,6 @@ import Img, { FluidObject } from 'gatsby-image';
 import { Element } from 'react-scroll';
 import InViewMonitor from 'react-inview-monitor';
 import Arrow from './Arrow';
-import Image from './Image';
 
 type ChildImage = {
   childImageSharp: {
@@ -30,13 +29,13 @@ const About: React.FC = () => {
     }
   `);
   return (
-    <Wrapper>
+    <Wrapper name="about">
       <InView>
         <InViewMonitor
           childPropsInView={{ isActive: true }}
           classNameInView="animate__animated animate__fadeInLeft"
         >
-          <Container name="about" isActive={false}>
+          <Container isActive={false}>
             <AboutContainer>
               <Name>
                 田中&nbsp;智也
@@ -66,7 +65,7 @@ const About: React.FC = () => {
   );
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled(Element)`
   position: relative;
   height: 100vh;
   display: flex;
@@ -79,7 +78,7 @@ const InView = styled.div`
   height: 80vh;
 `;
 
-const Container = styled(Element)<{ isActive: boolean }>`
+const Container = styled.div<{ isActive: boolean }>`
   display: flex;
   visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
   min-width: 100%;
