@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
-import Img, { FixedObject } from 'gatsby-image';
+import Img, { FluidObject } from 'gatsby-image';
 
 type Props = {
   filename: string;
@@ -11,7 +11,7 @@ type ChildImage = {
     relativePath: string;
     name: string;
     childImageSharp: {
-      fixed: FixedObject;
+      fluid: FluidObject;
     };
     extension: string;
     publicURL: string;
@@ -35,8 +35,8 @@ const Image: React.FC<Props> = ({ filename }) => {
             relativePath
             name
             childImageSharp {
-              fixed(width: 24) {
-                ...GatsbyImageSharpFixed
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
             extension
@@ -54,8 +54,8 @@ const Image: React.FC<Props> = ({ filename }) => {
   if (!childImageSharp && image.node.extension === 'svg') {
     return <img src={publicURL} width="32px" height="32px" />;
   }
-  const fixedImage: FixedObject = image.node.childImageSharp.fixed;
-  return <Img fixed={fixedImage} />;
+  const fluidImage: FluidObject = image.node.childImageSharp.fluid;
+  return <Img fluid={fluidImage} />;
 };
 
 export default Image;

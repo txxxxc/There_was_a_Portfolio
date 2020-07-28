@@ -20,6 +20,7 @@ const Container = styled(Link)`
   transform: rotate(-45deg);
   &:hover {
     opacity: 0.7;
+    cursor: pointer;
   }
 `;
 

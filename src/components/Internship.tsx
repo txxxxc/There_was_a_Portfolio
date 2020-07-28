@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Element } from 'react-scroll';
 import Arrow from './Arrow';
+import { Wrapper, Container, Title } from './Utilities';
 
 const Internship: React.FC = () => (
   <Wrapper name="internship">
@@ -9,7 +9,7 @@ const Internship: React.FC = () => (
       <Title>Internship</Title>
       <Contents>
         <Content>
-          <Topic>Life is Tech!</Topic>
+          <Topic href="https://life-is-tech.com/">Life is Tech!</Topic>
           <Description>
             Web Service Programming Course Mentor(2020/07~)
           </Description>
@@ -22,24 +22,6 @@ const Internship: React.FC = () => (
     <Arrow to="products" />
   </Wrapper>
 );
-
-const Wrapper = styled(Element)`
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Container = styled.div`
-  width: 100%;
-  height: 80vh;
-`;
-
-const Title = styled.div`
-  font-size: 64px;
-  padding-bottom: 4rem;
-`;
 
 const circleDiameter = 4;
 
@@ -66,14 +48,23 @@ const Contents = styled.div`
 `;
 
 const Content = styled.div`
+  font-weight: 200;
   &:nth-child(1) {
     flex-grow: 1;
   }
 `;
 
-const Topic = styled.h2`
+const Topic = styled.a`
   font-size: 4.8rem;
-  font-weight: 400;
+  text-decoration: none;
+  color: #fafafa;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+  }
 
   &::before {
     content: '';

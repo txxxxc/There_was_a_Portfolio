@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img, { FluidObject } from 'gatsby-image';
-import { Element } from 'react-scroll';
 import InViewMonitor from 'react-inview-monitor';
 import Arrow from './Arrow';
+import { Wrapper, Container, Title } from './Utilities';
 
 type ChildImage = {
   childImageSharp: {
@@ -30,18 +30,18 @@ const About: React.FC = () => {
   `);
   return (
     <Wrapper name="about">
-      <InView>
+      <Container>
         <InViewMonitor
           childPropsInView={{ isActive: true }}
           classNameInView="animate__animated animate__fadeInLeft"
         >
-          <Container isActive={false}>
+          <InView isActive={false}>
             <AboutContainer>
-              <Name>
+              <Title>
                 田中&nbsp;智也
                 <br />
                 <Alphabet>Tomoya Tanaka</Alphabet>
-              </Name>
+              </Title>
               <Description>
                 2001年、大阪府箕面市生まれ。19歳。
                 <br />
@@ -57,36 +57,18 @@ const About: React.FC = () => {
             <ImageContainer>
               <ProfileImg fluid={data.profile.childImageSharp.fluid} />
             </ImageContainer>
-          </Container>
+          </InView>
         </InViewMonitor>
-      </InView>
+      </Container>
       <Arrow to="skills" />
     </Wrapper>
   );
 };
 
-const Wrapper = styled(Element)`
-  position: relative;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const InView = styled.div`
-  min-width: 100%;
-  height: 80vh;
-`;
-
-const Container = styled.div<{ isActive: boolean }>`
+const InView = styled.div<{ isActive: boolean }>`
   display: flex;
   visibility: ${({ isActive }) => (isActive ? 'visible' : 'hidden')};
   min-width: 100%;
-`;
-
-const Name = styled.p`
-  font-size: 64px;
-  margin-bottom: 32px;
 `;
 
 const AboutContainer = styled.div`

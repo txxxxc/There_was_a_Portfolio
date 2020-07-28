@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Element } from 'react-scroll';
 import Image from './Image';
 import Arrow from './Arrow';
+import { Wrapper as UtilitiesWrapper, Container, Title } from './Utilities';
 
 interface Content {
   icon?: string;
@@ -74,20 +74,20 @@ const SkillsContents: ContentsType[] = [
 const Skills: React.FC = () => (
   <Wrapper name="skills">
     <Container>
-      <Header>Skills</Header>
+      <Title>Skills</Title>
       {SkillsContents.map(elements => (
         <>
           <Topic>{elements.genre}</Topic>
           <Contents>
             {elements.contents.map(content => (
-              <>
+              <Content>
                 {content.icon && (
                   <Icon>
                     <Image filename={content.icon} />
                   </Icon>
                 )}
                 <Name>{content.name}</Name>
-              </>
+              </Content>
             ))}
           </Contents>
         </>
@@ -97,18 +97,8 @@ const Skills: React.FC = () => (
   </Wrapper>
 );
 
-const Wrapper = styled(Element)`
-  display: flex;
-  position: relative;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+const Wrapper = styled(UtilitiesWrapper)`
   flex-direction: column;
-`;
-
-const Container = styled.div`
-  height: 80vh;
-  width: 100%;
 `;
 
 const Topic = styled.p`
@@ -117,22 +107,23 @@ const Topic = styled.p`
 `;
 
 const Contents = styled.p`
+  display: flex;
+  flex-wrap: wrap;
   font-size: 3.2rem;
   font-weight: 400;
+`;
+
+const Content = styled.div`
   padding-top: 2rem;
 `;
 
 const Icon = styled.span`
   padding-right: 1rem;
+  vertical-align: middle;
 `;
 
 const Name = styled.span`
   padding-right: 2rem;
-`;
-
-const Header = styled.p`
-  font-size: 6.4rem;
-  font-weight: 400;
 `;
 
 export default Skills;

@@ -5,8 +5,8 @@ import Home from '../components/Home';
 import About from '../components/About';
 import Skills from '../components/Skills';
 import Internship from '../components/Internship';
-// import Products from '../components/Products';
-// import Contact from '../components/Contact';
+import Products from '../components/Products';
+import Contact from '../components/Contact';
 import Layout from '../components/Layout';
 import 'animate.css';
 
@@ -40,8 +40,8 @@ const IndexPage: React.FC = () => (
     <About />
     <Skills />
     <Internship />
-    {/* <Products />
-      <Contact /> */}
+    <Products />
+    <Contact />
   </Layout>
 );
 export default IndexPage;
