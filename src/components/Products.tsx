@@ -1,40 +1,63 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link, graphql, useStaticQuery } from 'gatsby';
 import Image from './Image';
 import Arrow from './Arrow';
 import { Wrapper, Container, Title } from './Utilities';
+import { ProductsQuery } from '../../types/graphql-types.d';
 
-const Products: React.FC = () => (
-  <Wrapper name="products">
-    <Container>
-      <Title>Products</Title>
-      <Contents>
-        <Product>
-          <Image filename="subject-simulator.png" />
-          <ProductTitle>時間割シミュレーター</ProductTitle>
-          <ProductDescription>
-            自分が通っていた高校用に作った時間割のシミュレーターです。
-          </ProductDescription>
-        </Product>
-        <Product>
-          <Image filename="camp_helper.png" />
-          <ProductTitle>キャンプヘルパー</ProductTitle>
-          <ProductDescription>
-            キャンプでの問題を解消するためのアプリです。
-          </ProductDescription>
-        </Product>
-      </Contents>
-    </Container>
-    <Arrow to="contact" />
-  </Wrapper>
-);
+interface Data {
+  data: ProductsQuery;
+}
+const Products: React.FC = () => {
+  const allPosts = useStaticQuery<Data>(graphql`
+    query Products {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        edges {
+          node {
+            excerpt(pruneLength: 250)
+            id
+            frontmatter {
+              title
+              path
+              description
+              thumbnail
+              date(formatString: "MMMM DD, YYYY")
+            }
+          }
+        }
+      }
+    }
+  `);
+  console.log(allPosts);
+  const { edges: posts } = allPosts.allMarkdownRemark;
+  return (
+    <Wrapper name="products">
+      <Container>
+        <Title>Products</Title>
+        <Contents>
+          {posts
+            .filter(post => post?.node?.frontmatter?.title?.length > 0)
+            .map(({ node: post }) => (
+              <Product to={post.frontmatter?.path}>
+                <Image filename={post.frontmatter?.thumbnail} />
+                <ProductTitle>{post.frontmatter?.title}</ProductTitle>
+                <ProductDescription>{post.excerpt}</ProductDescription>
+              </Product>
+            ))}
+        </Contents>
+      </Container>
+      <Arrow to="contact" />
+    </Wrapper>
+  );
+};
 
 const Contents = styled.div`
   display: flex;
   justify-content: space-between;
 `;
 
-const Product = styled.div`
+const Product = styled(Link)`
   width: 45%;
 `;
 
